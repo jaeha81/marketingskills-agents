@@ -34,7 +34,7 @@ ${skill.description}
 ${additionalContext ? `- 추가 컨텍스트: ${additionalContext}` : ""}
 
 ## 실행 지시
-${skill.claudeUsage}
+${skill.claudeInstructions ?? skill.claudeUsage}
 
 위 정보를 바탕으로 ${skill.nameKo} 관점에서 구체적이고 실행 가능한 결과물을 작성하라.
 결과물은 한국어로 작성하며, 바로 사용할 수 있는 형태로 제공하라.
@@ -62,7 +62,7 @@ ${skill.description}
 ${additionalContext ? `- 추가 컨텍스트: ${additionalContext}` : ""}
 
 ## 검증 지시
-${skill.codexUsage}
+${skill.codexInstructions ?? skill.codexUsage}
 
 ## 검증 체크리스트
 아래 항목을 기준으로 제공된 마케팅 결과물을 검토하고 피드백을 제공하라:

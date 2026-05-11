@@ -10,6 +10,8 @@ export interface Skill {
   simpleDescription: string;
   claudeUsage: string;
   codexUsage: string;
+  claudeInstructions?: string;
+  codexInstructions?: string;
   relatedSkills: string[];
 }
 
