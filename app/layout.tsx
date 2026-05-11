@@ -1,11 +1,27 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import NavBar from "@/components/NavBar";
+import ServiceWorkerRegistration from "@/components/ServiceWorkerRegistration";
 
 export const metadata: Metadata = {
   title: "마케팅스킬 에이전트",
   description:
     "마케팅 스킬을 선택하고 Claude/Codex용 실행 프롬프트를 생성하는 로컬 대시보드",
+  manifest: "/manifest.webmanifest",
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "default",
+    title: "마케팅스킬",
+  },
+  other: {
+    "mobile-web-app-capable": "yes",
+  },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#0284c7",
+  width: "device-width",
+  initialScale: 1,
 };
 
 export default function RootLayout({
@@ -16,6 +32,7 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <body className="min-h-screen bg-gray-50 text-gray-900">
+        <ServiceWorkerRegistration />
         <NavBar />
         <main className="max-w-7xl mx-auto px-4 sm:px-6 py-4 sm:py-6">{children}</main>
         <footer className="mt-16 border-t border-gray-200 py-6 text-center text-sm text-gray-400">
