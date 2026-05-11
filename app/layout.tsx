@@ -17,7 +17,7 @@ export default function RootLayout({
     <html lang="ko">
       <body className="min-h-screen bg-gray-50 text-gray-900">
         <NavBar />
-        <main className="max-w-7xl mx-auto px-4 py-6">{children}</main>
+        <main className="max-w-7xl mx-auto px-4 sm:px-6 py-4 sm:py-6">{children}</main>
         <footer className="mt-16 border-t border-gray-200 py-6 text-center text-sm text-gray-400">
           This dashboard uses and localizes concepts from{" "}
           <a

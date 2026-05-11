@@ -41,16 +41,38 @@ export default async function SkillDetailPage({
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-5">
           <div className="bg-sky-50 rounded-lg p-3">
-            <div className="text-xs font-semibold text-sky-700 mb-1">
-              Claude Code 활용
+            <div className="text-xs font-semibold text-sky-700 mb-2">
+              Claude Code 실행 절차
             </div>
-            <p className="text-sm text-sky-900">{skill.claudeUsage}</p>
+            {skill.claudeInstructions ? (
+              <ol className="space-y-1.5">
+                {skill.claudeInstructions.split("\n").map((step, i) => (
+                  <li key={i} className="text-xs text-sky-900 leading-relaxed flex gap-1.5">
+                    <span className="shrink-0 font-semibold text-sky-500">{i + 1}.</span>
+                    <span>{step.replace(/^\d+\.\s*/, "")}</span>
+                  </li>
+                ))}
+              </ol>
+            ) : (
+              <p className="text-sm text-sky-900">{skill.claudeUsage}</p>
+            )}
           </div>
           <div className="bg-purple-50 rounded-lg p-3">
-            <div className="text-xs font-semibold text-purple-700 mb-1">
-              Codex 활용
+            <div className="text-xs font-semibold text-purple-700 mb-2">
+              Codex 검증 체크리스트
             </div>
-            <p className="text-sm text-purple-900">{skill.codexUsage}</p>
+            {skill.codexInstructions ? (
+              <ul className="space-y-1.5">
+                {skill.codexInstructions.split("\n").map((item, i) => (
+                  <li key={i} className="text-xs text-purple-900 leading-relaxed flex gap-1.5">
+                    <span className="shrink-0 text-purple-400">☐</span>
+                    <span>{item.replace(/^\[[ x]\]\s*/, "")}</span>
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              <p className="text-sm text-purple-900">{skill.codexUsage}</p>
+            )}
           </div>
         </div>
 

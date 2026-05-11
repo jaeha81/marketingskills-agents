@@ -136,7 +136,7 @@ export default function PromptBuilder({ skill }: Props) {
               <CopyButton text={generatedPrompt} />
             </div>
           </div>
-          <pre className="bg-gray-50 rounded-xl p-4 text-sm text-gray-700 whitespace-pre-wrap overflow-auto max-h-[500px] font-mono border border-gray-200">
+          <pre className="bg-gray-50 rounded-xl p-3 sm:p-4 text-xs sm:text-sm text-gray-700 whitespace-pre-wrap overflow-auto max-h-[300px] sm:max-h-[500px] font-mono border border-gray-200">
             {generatedPrompt}
           </pre>
         </div>

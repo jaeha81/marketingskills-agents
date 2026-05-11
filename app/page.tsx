@@ -9,15 +9,15 @@ export default function HomePage() {
   return (
     <div className="space-y-10">
       {/* Hero */}
-      <section className="text-center py-10">
-        <h1 className="text-3xl font-bold text-gray-900 mb-3">
+      <section className="text-center py-8 sm:py-10">
+        <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-3">
           마케팅스킬 에이전트
         </h1>
-        <p className="text-gray-500 text-lg max-w-xl mx-auto">
+        <p className="text-gray-500 text-base sm:text-lg max-w-xl mx-auto px-2">
           38가지 마케팅 스킬을 선택하고, Claude Code 또는 Codex에 바로 붙여넣을 수
           있는 실행 프롬프트를 생성하세요.
         </p>
-        <div className="mt-6 flex gap-3 justify-center">
+        <div className="mt-6 flex flex-col sm:flex-row gap-3 justify-center px-4 sm:px-0">
           <Link href="/skills" className="btn-primary">
             스킬 탐색하기
           </Link>
